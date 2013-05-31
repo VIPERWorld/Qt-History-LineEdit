@@ -38,6 +38,12 @@ class History_Line_Edit : public QLineEdit
 
 public:
     explicit History_Line_Edit(QWidget *parent = 0);
+
+    /**
+     * @brief Number of lines
+     * @return Number of lines entered
+     */
+    int lineCount() const { return lines.size(); }
     
 private slots:
     void enter_pressed();
