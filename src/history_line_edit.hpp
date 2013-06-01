@@ -35,6 +35,7 @@ class History_Line_Edit : public QLineEdit
 
     int         current_line;
     QStringList lines;
+    QString     unfinished;
 
 public:
     explicit History_Line_Edit(QWidget *parent = 0);

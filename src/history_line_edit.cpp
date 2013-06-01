@@ -37,7 +37,7 @@ History_Line_Edit::History_Line_Edit(QWidget *parent) :
 void History_Line_Edit::enter_pressed()
 {
     lines << text();
-    current_line = lines.size()-1;
+    current_line = lines.size();
     setText("");
     emit lineExecuted(lines.back());
 }
@@ -72,7 +72,7 @@ void History_Line_Edit::previous_line()
 
     if ( !text().isEmpty() &&
          ( current_line >= lines.size() || text() != lines[current_line] ) )
-        lines << text();
+        unfinished = text();
 
     if ( current_line > 0 )
         current_line--;
@@ -90,7 +90,8 @@ void History_Line_Edit::next_line()
 
     if ( current_line >= lines.size() )
     {
-        setText("");
+        setText(unfinished);
+        unfinished = "";
         current_line = lines.size();
     }
     else
