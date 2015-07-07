@@ -42,12 +42,12 @@ bool History_LineEdit_Plugin::isInitialized() const
 
 QWidget *History_LineEdit_Plugin::createWidget(QWidget *parent)
 {
-    return new History_Line_Edit(parent);
+    return new HistoryLineEdit(parent);
 }
 
 QString History_LineEdit_Plugin::name() const
 {
-    return "History_Line_Edit";
+    return "HistoryLineEdit";
 }
 
 QString History_LineEdit_Plugin::group() const
@@ -78,7 +78,7 @@ bool History_LineEdit_Plugin::isContainer() const
 QString History_LineEdit_Plugin::domXml() const
 {
     return "<ui language=\"c++\">\n"
-           " <widget class=\"History_Line_Edit\" name=\"history_line_edit\">\n"
+           " <widget class=\"HistoryLineEdit\" name=\"history_line_edit\">\n"
            " </widget>\n"
            "</ui>\n";
 }

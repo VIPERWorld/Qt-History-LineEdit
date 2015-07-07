@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    History_Line_Edit d;
+    HistoryLineEdit d;
     d.show();
     
     return a.exec();
